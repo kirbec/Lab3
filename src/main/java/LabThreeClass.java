@@ -52,7 +52,7 @@ public class LabThreeClass {
         String[] splitBySpaces = text.split(" ");
         int count = 0;
         for (int i = 0; i < splitBySpaces.length; i++) {
-            splitBySpaces[i] = splitBySpaces[i].replaceAll("//W", "");
+            splitBySpaces[i] = splitBySpaces[i].replaceAll("\\W", "");
             if (word.toLowerCase().equals(splitBySpaces[i].toLowerCase())) {
                 count += 1;
             }
@@ -70,6 +70,23 @@ public class LabThreeClass {
         String[] textArray = text.split(" ");
         return textArray.length;
 
+    }
+
+    /**
+     *
+     * @param text to find unique words within
+     * @return number of unique words
+     * unfinished challenge
+     */
+    public static int uniqueWordsInText(final String text) {
+        String[] textArray = text.split(" ");
+        String[] uniqueWords = new String[0];
+
+        for (String s: textArray) {
+
+        }
+
+        return uniqueWords.length;
     }
 
 
