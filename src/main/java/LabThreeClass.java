@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -21,6 +23,8 @@ public class LabThreeClass {
                 + numberOfWordsInText(urlToString("http://erdani.com/tdpl/hamlet.txt")));
         System.out.println("Number of recurrances of Prince : "
                 + numberOfRecurrences("prince", urlToString("http://erdani.com/tdpl/hamlet.txt")));
+        System.out.println("Number of unique words: "
+                + uniqueWordsInText(urlToString("http://erdani.com/tdpl/hamlet.txt")));
     }
 
     /**
@@ -76,17 +80,19 @@ public class LabThreeClass {
      *
      * @param text to find unique words within
      * @return number of unique words
-     * unfinished challenge
+     * finished Challenged
      */
     public static int uniqueWordsInText(final String text) {
         String[] textArray = text.split(" ");
-        String[] uniqueWords = new String[0];
+        ArrayList<String> uniqueWords = new ArrayList<String>();
 
         for (String s: textArray) {
-
+            if (!uniqueWords.contains(s.toLowerCase())) {
+                uniqueWords.add(s.toLowerCase());
+            }
         }
 
-        return uniqueWords.length;
+        return uniqueWords.size();
     }
 
 
